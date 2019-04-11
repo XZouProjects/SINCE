@@ -26,14 +26,8 @@
 
 # load demo data 
 
-url = "https://raw.githubusercontent.com/XZouProjects/SINCE_test/master/SC3_Pollen_8.xls"
-download.file(url, "SC3_Pollen_8.xls")
-
-url = "https://raw.githubusercontent.com/XZouProjects/SINCE_test/master/SC3_Pollen_9.xls"
-download.file(url, "SC3_Pollen_9.xls")
-
-url = "https://raw.githubusercontent.com/XZouProjects/SINCE_test/master/SC3_Pollen_10.xls"
-download.file(url, "SC3_Pollen_10.xls")
+url = "https://raw.githubusercontent.com/XZouProjects/SINCE_test/master/SC3_Pollen_2.xls"
+download.file(url, "SC3_Pollen_2.xls")
 
 # The clustering result directories are listed in the file named 'cluster_res_list.txt'
 url = "https://raw.githubusercontent.com/XZouProjects/SINCE_test/master/cluster_res_list.txt"
