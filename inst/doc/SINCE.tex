@@ -1,0 +1,138 @@
+%\VignetteIndexEntry{A short SINCE}
+%\VignetteKeywords{Single Cell} 
+%\VignettePackage{SINCE}
+
+%
+% NOTE -- ONLY EDIT THE .Rnw FILE!!!  The .tex file is
+% likely to be overwritten.
+%
+\documentclass[11pt]{article}\usepackage[]{graphicx}\usepackage[]{color}
+%% maxwidth is the original width if it is less than linewidth
+%% otherwise use linewidth (to make sure the graphics do not exceed the margin)
+\makeatletter
+\def\maxwidth{ %
+  \ifdim\Gin@nat@width>\linewidth
+    \linewidth
+  \else
+    \Gin@nat@width
+  \fi
+}
+\makeatother
+
+\definecolor{fgcolor}{rgb}{0.345, 0.345, 0.345}
+\newcommand{\hlnum}[1]{\textcolor[rgb]{0.686,0.059,0.569}{#1}}%
+\newcommand{\hlstr}[1]{\textcolor[rgb]{0.192,0.494,0.8}{#1}}%
+\newcommand{\hlcom}[1]{\textcolor[rgb]{0.678,0.584,0.686}{\textit{#1}}}%
+\newcommand{\hlopt}[1]{\textcolor[rgb]{0,0,0}{#1}}%
+\newcommand{\hlstd}[1]{\textcolor[rgb]{0.345,0.345,0.345}{#1}}%
+\newcommand{\hlkwa}[1]{\textcolor[rgb]{0.161,0.373,0.58}{\textbf{#1}}}%
+\newcommand{\hlkwb}[1]{\textcolor[rgb]{0.69,0.353,0.396}{#1}}%
+\newcommand{\hlkwc}[1]{\textcolor[rgb]{0.333,0.667,0.333}{#1}}%
+\newcommand{\hlkwd}[1]{\textcolor[rgb]{0.737,0.353,0.396}{\textbf{#1}}}%
+\let\hlipl\hlkwb
+
+\usepackage{framed}
+\makeatletter
+\newenvironment{kframe}{%
+ \def\at@end@of@kframe{}%
+ \ifinner\ifhmode%
+  \def\at@end@of@kframe{\end{minipage}}%
+  \begin{minipage}{\columnwidth}%
+ \fi\fi%
+ \def\FrameCommand##1{\hskip\@totalleftmargin \hskip-\fboxsep
+ \colorbox{shadecolor}{##1}\hskip-\fboxsep
+     % There is no \\@totalrightmargin, so:
+     \hskip-\linewidth \hskip-\@totalleftmargin \hskip\columnwidth}%
+ \MakeFramed {\advance\hsize-\width
+   \@totalleftmargin\z@ \linewidth\hsize
+   \@setminipage}}%
+ {\par\unskip\endMakeFramed%
+ \at@end@of@kframe}
+\makeatother
+
+\definecolor{shadecolor}{rgb}{.97, .97, .97}
+\definecolor{messagecolor}{rgb}{0, 0, 0}
+\definecolor{warningcolor}{rgb}{1, 0, 1}
+\definecolor{errorcolor}{rgb}{1, 0, 0}
+\newenvironment{knitrout}{}{} % an empty environment to be redefined in TeX
+
+\usepackage{alltt}
+
+
+
+\textwidth=6.2in
+\textheight=8.5in
+%\parskip=.3cm
+\oddsidemargin=.1in
+\evensidemargin=.1in
+\headheight=-.3in
+
+\newcommand{\scscst}{\scriptscriptstyle}
+\newcommand{\scst}{\scriptstyle}
+
+
+\newcommand{\Rfunction}[1]{{\texttt{#1}}}
+\newcommand{\Robject}[1]{{\texttt{#1}}}
+\newcommand{\Rpackage}[1]{{\textit{#1}}}
+\newcommand{\Rmethod}[1]{{\texttt{#1}}}
+\newcommand{\Rfunarg}[1]{{\texttt{#1}}}
+\newcommand{\Rclass}[1]{{\textit{#1}}}
+
+\textwidth=6.2in
+
+\bibliographystyle{plainnat}
+\IfFileExists{upquote.sty}{\usepackage{upquote}}{}
+\begin{document}
+%\setkeys{Gin}{width=0.55\textwidth}
+
+\title{The \Rpackage{SINCE} package}
+\author{Jie Hao, Xin Zou, Ze Guang Han}
+\maketitle
+
+% ---------------------------------------------------------------------------
+
+\section{Introduction}
+
+The main function performs SINCE to evaluate clustering results with different parameters.
+\Rpackage{SINCE} package.
+
+
+% ---------------------------------------------------------------------------
+
+\section{Rpackage{SINCE} Analysis Example Workflow}
+
+Required packages: knitr, Matrix, scater, SC3, SingleCellExperiment, OGFSC and SINCE.
+install knitr, Matrix from cran.
+install scater,SC3,SingleCellExperiment from Bioconductor.
+install OGFSC: The OGFSC package is freely downloadable from github: https://github.com/XZouProjects/OGFSC-R
+
+A demo script and the associated files can be found at: https://github.com/XZouProjects/SINCE
+
+Brief introduction of SINCE:
+
+The SINCE algorithm is designed to estimate the number of cell clusters by incorporating with existing clustering methods. In the demo script, the SC3 method is used to achieve cell assignment results with different numbers of clusters. Then SINCE is applied to evaluate each SC3 clustering result. Based on the SINCE output, i.e., CERS values, one can determine the optimal number of clusters.
+
+Step by step tutorial:
+
+1. Gene filtering by OGFSC.
+2. SC3 clustering with various numbers of clusters. 
+3. Save each clustering result into a separate file using the write.table() function.
+4. Manually make up a clustering-result-directory list, and save the list into an independent file. For example, the file name is ``cluster\_res\_list.txt`` in the demo script.
+5. Run SINCE using the OGFSC filtered data and the directory list file as compulsory inputs. 
+
+SINCE parameters:
+
+Compulsory input:
+data - a log2 transformed scRNA-seq data matrix with rows being genes and columns being cells.
+cluster\_res\_list - a .txt file containing the list of clustering results.
+
+Sdjustable parameters:
+CERS\_plot\_option - the option to show CERS plot. By default 1.
+r2Cutoff - the OPLSDA r2 cutoff values in variable gene selection. By default[0.5, 0.7, 0.8].
+paralSize - number of repeats when calculating CERS. By default 6.
+miniClusterSize - the minimum size of each cell cluster. By default 5.
+
+% ---------------------------------------------------------------------------
+
+
+\end{document}
