@@ -86,6 +86,7 @@ Example:
 
 # load demo data 
 <<a1>>=
+library(SINCE)
 url = "https://raw.githubusercontent.com/XZouProjects/SINCE_test/master/SC3_Pollen_8.xls"
 download.file(url, "SC3_Pollen_8.xls")
 
