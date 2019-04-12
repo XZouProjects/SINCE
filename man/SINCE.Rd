@@ -25,7 +25,7 @@
  \examples{
 
 # load demo data 
-
+library(Rmpi)
 url = "https://raw.githubusercontent.com/XZouProjects/SINCE_test/master/SC3_Pollen_2.xls"
 download.file(url, "SC3_Pollen_2.xls")
 
