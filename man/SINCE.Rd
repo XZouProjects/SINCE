@@ -33,7 +33,7 @@ download.file(url, "SC3_Pollen_test.xls")
 url = "https://raw.githubusercontent.com/XZouProjects/SINCE_test/master/cluster_res_list_test.txt"
 download.file(url, "cluster_res_list_test.txt")
 
-url = "https://raw.githubusercontent.com/XZouProjects/SINCE_test/master/data.rda"
+url = "https://raw.githubusercontent.com/XZouProjects/SINCE_test/master/data_test.rda"
 download.file(url, "data_test.rda")
 load("data_test.rda")
 
