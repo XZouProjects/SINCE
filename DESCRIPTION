@@ -5,7 +5,7 @@ Version: 0.99.11
 Author: Jie Hao, Xin Zou, Ze Guang Han
 Maintainer: Jie Hao <j.hao@sjtu.edu.cn>
 Description: The algorithm is designed to evaluate the results obtained by existing clustering methods. Based on the output of SINCE, the cell clustering parameters, e.g., number of cell clusters, can be optimized for the given dataset.
-Depends: doSNOW, e1071, ClusterR, RColorBrewer, Rmpi
+Depends: doSNOW, e1071, ClusterR, RColorBrewer
 Imports: graphics,stats,utils
 License: GPL-2
 biocViews: SingleCell, Software
