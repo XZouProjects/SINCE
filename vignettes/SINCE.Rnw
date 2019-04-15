@@ -98,7 +98,7 @@ download.file(url,"cluster_res_list_test.txt")
 @
 
 <<a4>>=
-url = "https://raw.githubusercontent.com/XZouProjects/SINCE_test/master/data.rda"
+url = "https://raw.githubusercontent.com/XZouProjects/SINCE_test/master/data_test.rda"
 download.file(url, "data_test.rda")
 load("data_test.rda")
 @
