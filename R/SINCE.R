@@ -29,7 +29,7 @@ SINCE <- function(data, cluster_res_list,  CERS_plot_option = 1, r2Cutoff =c(0.5
   #miniClusterSize = miniClusterSize
 
 
-  cl<-makeCluster(paralSize, type = getClusterOption("type"))
+  cl<-makeCluster(paralSize, type = "SOCK")
   registerDoSNOW(cl)
 
   for (i in seq_len(NumRes))
