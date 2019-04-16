@@ -1,7 +1,7 @@
 Package: SINCE
 Title: SINCE - a robust algorithm for single-cell number of clusters
         estimation
-Version: 0.99.14
+Version: 0.99.15
 Author: Jie Hao, Xin Zou, Ze Guang Han
 Maintainer: Jie Hao <j.hao@sjtu.edu.cn>
 Description: The algorithm is designed to evaluate the results obtained by existing clustering methods. Based on the output of SINCE, the cell clustering parameters, e.g., number of cell clusters, can be optimized for the given dataset.
