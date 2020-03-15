@@ -1,5 +1,4 @@
-# SINCE_demo
-SINCE source code
+# SINCE
 
 
 The SINCE algorithm is designed to estimate the number of cell clusters by incorporating existing clustering methods. This repository contains 5 files
